@@ -111,6 +111,10 @@ spec:
             requests:
               cpu: 10m
               memory: 20Mi
+      tolerations:
+        - key: "node.kubernetes.io/os"
+          operator: "Exists"
+          effect: "NoSchedule"
       volumes:
         - name: csi-proxy-fs-pipe
           hostPath:
